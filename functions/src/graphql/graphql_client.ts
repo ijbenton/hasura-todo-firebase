@@ -1,7 +1,10 @@
 import { GraphQLClient } from "graphql-request";
+import * as functions from "firebase-functions";
 
-import { graphql_host, hasuraAccessKey } from "../config/graphql";
+const url  = functions.config().config.hasura_api_url;
+const secret = functions.config().config.hasura_admin_secret;
 
-export const client = new GraphQLClient(graphql_host, {
-  headers: { "x-hasura-admin-secret": hasuraAccessKey },
+
+export const client = new GraphQLClient(url, {
+  headers: { "x-hasura-admin-secret": secret },
 });

@@ -4,6 +4,7 @@ import { client } from "./graphql/graphql_client";
 import { addUser } from "./graphql/mutations";
 
 const admin = require("firebase-admin");
+
 admin.initializeApp(functions.config().firebase);
 
 exports.onSignUp = functions.auth.user().onCreate(async (user) => {
