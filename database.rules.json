@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "metadata": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid"
+      }
+    }
+  }
+}
